@@ -12,8 +12,8 @@ WORKDIR /var/www/html/
 
 RUN composer install
 
-WORKDIR /var/www/html/app
-VOLUME /var/www/html/app
+WORKDIR /var/www/html
+VOLUME /var/www/html
 
 ENTRYPOINT ["phpunit"]
 CMD ["."]
