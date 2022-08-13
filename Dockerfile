@@ -10,3 +10,6 @@ RUN apt-get update && apt-get install -y zip
 WORKDIR /var/www/html/
 
 RUN composer install
+
+ENTRYPOINT ["phpunit"]
+CMD ["."]
