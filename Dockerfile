@@ -4,6 +4,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 ENV PATH $PATH:/var/www/html/vendor/bin
 
 COPY php/composer.json /var/www/html/composer.json
+COPY php/phpunit.xml /var/www/html/phpunit.xml
 
 RUN apt-get update && apt-get install -y zip
 
