@@ -6,5 +6,6 @@ if [ "$1" = 'initialize' ]; then
   cp /tmp/phpunit.xml ./
   cp -rf /tmp/tests ./
   composer install
+else
+  exec "$@"
 fi
-exec "$@"
