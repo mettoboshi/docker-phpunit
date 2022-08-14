@@ -15,5 +15,7 @@ RUN composer install
 WORKDIR /var/www/html
 VOLUME /var/www/html
 
-ENTRYPOINT ["phpunit"]
-CMD ["."]
+COPY config/docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["phpunit"]
